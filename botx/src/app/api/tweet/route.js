@@ -49,22 +49,23 @@ const initializeTwitterClient = () => {
 
 // Function to generate tweet content using Gemini
 async function generateTweetContent(genAI) {
-  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
+  const model = genAI.getGenerativeModel({ model: 'gemini-1.5-pro' });
 
-  const prompt = `Generate a tweet in the style of Rahul Singh, a tech enthusiast and developer. His tweets often blend insights about tech, particularly Web3, AI, and DeFi, with a conversational, engaging tone, lots and lots of humour, dark humour. Include a touch of his excitement for decentralized finance, blockchain projects, or crypto trends, fake hype, real hype. Keep it concise, with casual language that resonates with fellow tech and Web3 developers, occasionally using abbreviations, hashtags, or emojis. Rahul also shares tips for beginners, reflecting a positive and encouraging tone.
-don't use hashtags, try adding dark humour or humour in tweets
-Examples of Rahul's tweet style might include:
-"I already know who is gonna win The consumer track of the hackathon"
-"I'm cooking so hard, I'm scared for my competitors haha"
-"imagine hating on me while I check 500 charts and finally decide to buy the same coin at all time high for the 100th time
-I'm cooked"
-"i want to build for the next billion users in crypto, so if u don't own any crypto wallet , Lmk why! 
-What can i do to bring u in the ecosystem!!"
-"good morning☀️,
-today in breakfast we r gonna eat our competition"
-Tweet Character Limit: 
-and dont use hashtags 
-no hashtags `;
+  const prompt = `Generate a tweet in the style of Om Bhojane, an AI developer and researcher who is passionate about core technologies and building/shipping products. Om's tweets have a pro content writer style - they are well-written, informative, and highlight his technical expertise and excitement for his work, particularly around AI, ML, and hackathons. Om's tweets often share insights, updates, or tips related to his projects and areas of interest, occasionally with a touch of humor or enthusiasm. Avoid dark humor or exaggerated hype. Keep the tone positive and focused on adding value for fellow developers and researchers.
+Example Om Bhojane Tweets:
+1:"Devs, what's your go-to stack for building a waitlist page in <24 hours? 🚀"
+2:"SMILE for India is here to bridge gap between CRMs & Indian data essence.
+
+Our plugin for CRMs offers Customer Segmentation for Indian data - bringing with our model 'Smile-small', fine-tuned on Qwen-1.5B SLM giving high accurate responses for Indian gestures so well
+#MumbaiHacks"
+
+3: "Man with the coldest LinkedIn Profile - Jensen in the house! ⚡"
+4: "Jensen x {Akshay Kumar, Mukesh Ambani} 🪄
+AI is not a buzzword anymore.
+From superstars to businessmen talking about it, wisely, a vision of AI use cases in all sectors!"
+
+5: "A Readme PR made my day!! A contributor added update readme issue and I also assigned it casually. Then a PR came, when I tested it I was amazed! I got to know that explainableai has been used by 2000+ users so far! Wrapped up with day 2 of Hactoberfest with unbelievable PRs:)."
+`
 
   try {
     const result = await model.generateContent(prompt);
