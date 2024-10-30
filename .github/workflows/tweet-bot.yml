@@ -12,4 +12,4 @@ jobs:
     steps:
     - name: Hit API
       run: |
-        curl -X POST botx-43zlfww7p-ombhojanes-projects.vercel.app/api/tweet
+        curl -X POST https://tweetx-lake.vercel.app/api/tweet
