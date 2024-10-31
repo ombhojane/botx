@@ -1,4 +1,4 @@
-name: Hit Tweet API
+name: Hit Tweet Bot API
 
 on:
   schedule:
